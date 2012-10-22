@@ -1,0 +1,36 @@
+<h1>Post Listing</h1>
+<p style="font-family: helvetica">
+	Make a post or search existing posts.<br />
+	Check out what others have written.
+</p>
+	
+<table style= "border: 2px solid black; padding: 2px">
+  <tr style= "border: 2px solid black">
+    <th style= "border: 2px solid black">
+			Name</th>
+    <th style= "border: 2px solid black">
+			Title</th>
+    <th style= "border: 2px solid black">
+			Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td style= "border: 2px solid black; padding: 5px">
+			<%= post.name %></td>
+    <td style= "border: 2px solid black; padding: 5px">
+			<%= post.title %></td>
+    <td style= "border: 2px solid black; padding: 5px"><%= post.content %></td>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Post', new_post_path %>
