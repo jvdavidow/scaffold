@@ -30,10 +30,10 @@ Blog::Application.routes.draw do
   #   end
 
   # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
+  resources :posts do
+    resources :comments #, :sales
   #     resource :seller
-  #   end
+  end
 
   # Sample resource route with more complex sub-resources
   #   resources :products do
